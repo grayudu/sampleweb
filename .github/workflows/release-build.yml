@@ -12,7 +12,7 @@ jobs:
         name: grayudu
     - name: build docker
       run: |
-        docker build -t grayudu/simpleweb .
+        docker build -t grayudu/simpleweb:latest .
     - name: docker login
       uses: actions/docker/login@master
       env:
@@ -21,4 +21,4 @@ jobs:
     - name: docker push
       uses: actions/docker/cli@master
       with:
-        args: push grayudu/simpleweb
+        args: push grayudu/simpleweb:latest
