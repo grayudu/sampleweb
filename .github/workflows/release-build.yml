@@ -8,5 +8,8 @@ jobs:
     steps:
     - name: checkout master
       uses: actions/checkout@master
+      with:
+        name: grayudu
+    - name: build docker
       run: |
         docker build -t simpleweb:v1 .
