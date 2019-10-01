@@ -12,7 +12,7 @@ jobs:
         name: grayudu
     - name: build docker
       run: |
-        docker build -t simpleweb .
+        docker build -t grayudu/simpleweb .
     - name: docker login
       uses: actions/docker/login@master
       env:
