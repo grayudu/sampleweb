@@ -1,0 +1,10 @@
+name: Docker release build
+on: [push]
+
+jobs:
+  build:
+    name: docker build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: checkout master 
