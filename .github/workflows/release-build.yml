@@ -12,4 +12,13 @@ jobs:
         name: grayudu
     - name: build docker
       run: |
-        docker build -t simpleweb:v1 .
+        docker build -t simpleweb .
+    - name: docker login
+      uses: actions/docker/login@master
+      env:
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      - name: docker push
+        uses: actions/docker/cli@master
+        with:
+        args: push grayudu/simpleweb
