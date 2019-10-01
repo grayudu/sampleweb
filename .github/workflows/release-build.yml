@@ -18,7 +18,7 @@ jobs:
       env:
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-      - name: docker push
-        uses: actions/docker/cli@master
-        with:
+    - name: docker push
+      uses: actions/docker/cli@master
+      with:
         args: push grayudu/simpleweb
